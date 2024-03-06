@@ -31,6 +31,8 @@ img {
     <div id="dropbox"></div>
     <img id="gif" src="https://media.giphy.com/media/3ohzdNF74rFtPMZzck/giphy.gif">
 
+    <p style="margin-top: 200px">test6</p>
+
     <script>
         //select the thing we wanna drag
     var mustachio = document.getElementById('gif');
@@ -43,20 +45,20 @@ img {
         mustachio.style.left = touchLocation.pageX + 'px';
         mustachio.style.top = touchLocation.pageY + 'px';
     })
-    mustachio.addEventListener('touchend', function (ev) {
+    // mustachio.addEventListener('touchend', function (ev) {
         //current mustachio position when dropped
-        var x = parseInt(mustachio.style.left);
-        var y = parseInt(mustachio.style.top);
+        // var x = parseInt(mustachio.style.left);
+        // var y = parseInt(mustachio.style.top);
         //check to see if that position meets our constraints
-        if (x < 388 || x > 646) {
-            mustachio.style.left = '450px';
-            mustachio.style.top = '175px';
-        }
-        if (y < 100 || y > 356) {
-            mustachio.style.left = '450px';
-            mustachio.style.top = '175px';
-        }
-    })
+        // if (x < 388 || x > 646) {
+        //     mustachio.style.left = '450px';
+        //     mustachio.style.top = '175px';
+        // }
+        // if (y < 100 || y > 356) {
+        //     mustachio.style.left = '450px';
+        //     mustachio.style.top = '175px';
+        // }
+    // })
 
     </script>
 </body>
