@@ -40,11 +40,31 @@
 window.onload = function() {
     var dropItem = document.getElementById("dropItem");
 
-    dropItem.addEventListener('touchmove', function(ev) {
-        console.log("touch!");
-        var touchLocation = ev.targetTouches[0];
-
-        dropItem.style.left = touchLocation.pageX + 'px';
-        dropItem.style.top = touchLocation.pageY + 'px';
+    dropItem.addEventListener('mousedown', function(event) {
+        // console.log("touch!");
+        dropItem.classList.add("hovered");
     })
+
+    dropItem.addEventListener('touchstart', function(event) {
+        // console.log("touch!");
+        dropItem.classList.add("hovered");
+    })
+
+    $(document).mousemove(function (event) {
+        if($("#dropItem").hasClass("hovered")) {
+            captureMousePosition(event);
+        }
+    });
+
+    function captureMousePosition(event) {
+        console.log("touch21");
+        xMousePos = event.pageX;
+        yMousePos = event.pageY;
+        console.log("xMousePos=" + xMousePos + ",yMousePos" + yMousePos);
+        $("#dropItem").css("top", yMousePos).css("left", xMousePos);
+    //   $(".cursor-2").css("top", cursor_2_y).css("left", cursor_2_x);
+    }
+
+    
 }
+

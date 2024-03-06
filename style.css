@@ -49,5 +49,8 @@ body {
   height: 160px;
   border-radius: 12px;
   background-color: #f99e9e;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 /*# sourceMappingURL=style.css.map */
