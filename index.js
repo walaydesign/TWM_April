@@ -58,6 +58,12 @@ $(document).mousemove(function (event) {
     }
 });
 
+$(document).touchmove(function (event) {
+    if($("#dropItem").hasClass("hovered")) {
+        captureMousePosition(event);
+    }
+});
+
 function captureMousePosition(event) {
     xMousePos = event.pageX;
     yMousePos = event.pageY;
