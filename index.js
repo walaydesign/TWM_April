@@ -37,10 +37,7 @@
 // image.addEventListener('touchstart',function(){
 // });
 
-window.onload = function() {
 
-    
-}
 
 var dropItem = document.getElementById("dropItem");
 
@@ -48,8 +45,16 @@ dropItem.addEventListener('mousedown', function(event) {
     dropItem.classList.add("hovered");
 })
 
-dropItem.addEventListener('touchstart', function(event) {
-    dropItem.classList.add("hovered");
+// dropItem.addEventListener('touchstart', function(event) {
+//     dropItem.classList.add("hovered");
+// })
+
+dropItem.addEventListener('touchmove', function (ev) {
+    //grab the location of the touch
+    var touchLocation = ev.targetTouches[0];
+    //assign mustachio new coordinates based on the touch
+    dropItem.style.left = touchLocation.pageX + 'px';
+    dropItem.style.top = touchLocation.pageY + 'px';
 })
 
 $(document).mousemove(function (event) {
@@ -58,11 +63,11 @@ $(document).mousemove(function (event) {
     }
 });
 
-$(document).touchmove(function (event) {
-    if($("#dropItem").hasClass("hovered")) {
-        captureMousePosition(event);
-    }
-});
+// $(document).touchmove(function (event) {
+//     if($("#dropItem").hasClass("hovered")) {
+//         captureMousePosition(event);
+//     }
+// });
 
 function captureMousePosition(event) {
     xMousePos = event.pageX;
