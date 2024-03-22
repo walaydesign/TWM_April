@@ -66,18 +66,6 @@ function initPuzzle() {
         puzzlaArray[i].addEventListener('dragstart', dragStart);
         puzzlaArray[i].addEventListener('dragend', dragEnd);
     }
-    
-    // puzzle_1.addEventListener('dragstart', dragStart);
-    // puzzle_1.addEventListener('dragend', dragEnd);
-
-    // puzzle_2.addEventListener('dragstart', dragStart);
-    // puzzle_2.addEventListener('dragend', dragEnd);
-
-    // puzzle_3.addEventListener('dragstart', dragStart);
-    // puzzle_3.addEventListener('dragend', dragEnd);
-
-    // puzzle_4.addEventListener('dragstart', dragStart);
-    // puzzle_4.addEventListener('dragend', dragEnd);
 }
 
 function puzzlePic() {
@@ -145,27 +133,30 @@ window.onload = function() {
     var puzzleItem = document.getElementById('puzzleM-1');
     var puzzleLength = puzzleItem.clientHeight;
 
-    // var location_x_1, location_y_1, location_x_2, location_y_2, location_x_3, location_y_3, location_x_4, location_y_4; 
 
-    var empty_1_x_start = parseInt($(".empty-1").css("left"));
+    var empty_1_x_start = parseFloat($(".empty-1").css("left"));
     var empty_1_x_end = empty_1_x_start + emptyLength;
-    var empty_1_y_start = parseInt($(".empty-1").css("top"));
+    var empty_1_y_start = parseFloat($(".empty-1").css("top"));
     var empty_1_y_end = empty_1_y_start + emptyLength;
+    console.log(empty_1_x_start, empty_1_x_end, empty_1_y_start, empty_1_y_end);
     
-    var empty_2_x_start = parseInt($(".empty-2").css("left"));
+    var empty_2_x_start = parseFloat($(".empty-2").css("left"));
     var empty_2_x_end = empty_2_x_start + emptyLength;
-    var empty_2_y_start = parseInt($(".empty-2").css("top"));
+    var empty_2_y_start = parseFloat($(".empty-2").css("top"));
     var empty_2_y_end = empty_2_y_start + emptyLength;
+    console.log(empty_2_x_start, empty_2_x_end, empty_2_y_start, empty_2_y_end);
 
-    var empty_3_x_start = parseInt($(".empty-3").css("left"));
+    var empty_3_x_start = parseFloat($(".empty-3").css("left"));
     var empty_3_x_end = empty_3_x_start + emptyLength;
-    var empty_3_y_start = parseInt($(".empty-3").css("top"));
+    var empty_3_y_start = parseFloat($(".empty-3").css("top"));
     var empty_3_y_end = empty_3_y_start + emptyLength;
+    console.log(empty_3_x_start, empty_3_x_end, empty_3_y_start, empty_3_y_end);
 
-    var empty_4_x_start = parseInt($(".empty-4").css("left"));
+    var empty_4_x_start = parseFloat($(".empty-4").css("left"));
     var empty_4_x_end = empty_4_x_start + emptyLength;
-    var empty_4_y_start = parseInt($(".empty-4").css("top"));
+    var empty_4_y_start = parseFloat($(".empty-4").css("top"));
     var empty_4_y_end = empty_4_y_start + emptyLength;
+    console.log(empty_4_x_start, empty_4_x_end, empty_4_y_start, empty_4_y_end);
 
     var empty_1 = document.getElementById('empty-1');
     var empty_2 = document.getElementById('empty-2');
@@ -175,12 +166,6 @@ window.onload = function() {
     touchh=false;
 
     let puzzleMArray = [puzzleM_1, puzzleM_2, puzzleM_3, puzzleM_4];
-    // let locationArray = [
-    //     [location_x_1, location_y_1], 
-    //     [location_x_2, location_y_2], 
-    //     [location_x_3, location_y_3], 
-    //     [location_x_4, location_y_4]
-    // ];
     let OriginArray = [
         [puzzleM_1_oriX, puzzleM_1_oriY],
         [puzzleM_2_oriX, puzzleM_2_oriY], 
@@ -211,27 +196,34 @@ window.onload = function() {
             touchh=true;
         })
         puzzleMArray[j].addEventListener('touchend', function (e) {
-            var order = this.getAttribute("data-order");
-            for(var k=0; k<4; k++) {
-                if(location_x >= emptyLocationArray[k][0] && location_x <= emptyLocationArray[k][1]) {
-                    if(location_y >= emptyLocationArray[k][2] && location_y <= emptyLocationArray[k][3]) {
-                        var emptyOrder = k+1;
-                        if(order == emptyOrder) {
-                            emptyArray[k].append(this);
-                            fill++;
-                            // console.log("k=" + k);
-                            if(fill == 4) {
-                                $(".sucess").show();
-                            }
-                        }else {
-                            if(touchh==true) {
+            if(touchh==true) {
+                var order = this.getAttribute("data-order");
+                console.log("fill=" + fill);
+                for(var k=0; k<4; k++) {
+                    if(location_x > emptyLocationArray[k][0] && location_x < emptyLocationArray[k][1]) {
+                        if(location_y > emptyLocationArray[k][2] && location_y < emptyLocationArray[k][3]) {
+                            var emptyOrder = k+1;
+                            if(order == emptyOrder) {
+                                emptyArray[k].append(this);
+                                fill++;
+                                // console.log("k=" + k);
+                                if(fill == 4) {
+                                    $(".sucess").show();
+                                }
+                            }else {
                                 $(".fail").show();
                                 this.style.left = OriginArray[j][0];
                                 this.style.top = OriginArray[j][1];
                             }
                         }
+                    }else {
+
+                        this.style.left = OriginArray[j][0];
+                        this.style.top = OriginArray[j][1];
                     }
                 }
+                touchh=false;
+
             }
         })
     }
