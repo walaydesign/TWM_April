@@ -558,9 +558,9 @@ window.onload = function() {
 // scrControl(t);
 
 // 方法二：兼容IOS
-// function bodyScroll(event){
-//     event.preventDefault();
-// }
+function bodyScroll(event){
+    event.preventDefault();
+}
 
 // function scrControl(t){
 //     if(t == 0){ //禁止滚动
