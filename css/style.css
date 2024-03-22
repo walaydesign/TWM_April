@@ -50,6 +50,19 @@ body {
   left: 70%;
 }
 
+.puzzle_group.m {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .puzzle_group.pc {
+    display: none;
+  }
+  .puzzle_group.m {
+    display: block;
+  }
+}
+
 .empty_item {
   position: absolute;
   width: 37.5%;

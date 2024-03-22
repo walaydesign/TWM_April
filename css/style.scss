@@ -22,28 +22,43 @@ body {
     pointer-events: none;
 }
 
-.puzzle_item {
-    position: absolute;
-    width: 17%;
-    // padding-bottom: 17%;
-    top: 43%;
-    border-radius: 15px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    &.puzzle {
-        &-1 {
-            left: 13%;
-            // background-image: url(../img/puzzle-01.png);
+.puzzle {
+    &_item {
+        position: absolute;
+        width: 17%;
+        top: 43%;
+        border-radius: 15px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        &.puzzle {
+            &-1 {
+                left: 13%;
+            }
+            &-2 {
+                left: 32%;
+            }
+            &-3 {
+                left: 51%;
+            }
+            &-4 {
+                left: 70%;
+            }
         }
-        &-2 {
-            left: 32%;
+    }
+    &_group {
+        &.m {
+            display: none;
         }
-        &-3 {
-            left: 51%;
-        }
-        &-4 {
-            left: 70%;
+    }
+    @media screen and (max-width: 991px) {
+        &_group {
+            &.pc {
+                display: none;
+            }
+            &.m {
+                display: block;
+            }
         }
     }
 }
@@ -52,7 +67,6 @@ body {
     position: absolute;
     width: 37.5%;
     padding-bottom: 37.5%;
-    // background-color: #fff;
     >img {
         position: absolute;
         width: 100%;
@@ -120,5 +134,4 @@ body {
         left: 20%;
         cursor: pointer;
     }
-    // display: none;
 }

@@ -1,16 +1,9 @@
 var puzzle_1, puzzle_2, puzzle_3, puzzle_4;
-var puzzles = document.querySelectorAll('.puzzle_item');
 const empties = document.querySelectorAll('.empty_item');
 
 initPuzzle();
 
 var puzzle, fill=0;
-
-for(let puzzle of puzzles) {
-    puzzle.addEventListener('dragstart', dragStart);
-    puzzle.addEventListener('dragend', dragEnd);
-}
-
 
 for(const empty of empties) {
     empty.addEventListener('dragover', dragOver);
@@ -80,7 +73,7 @@ function resetPuzzle() {
     let puzzleItem_2 = $("<img class='puzzle_item puzzle-2' id='puzzle-2' draggable='true'></img>");
     let puzzleItem_3 = $("<img class='puzzle_item puzzle-3' id='puzzle-3' draggable='true'></img>");
     let puzzleItem_4 = $("<img class='puzzle_item puzzle-4' id='puzzle-4' draggable='true'></img>");
-    $(".puzzle_group").append(puzzleItem_1,puzzleItem_2,puzzleItem_3,puzzleItem_4);
+    $(".puzzle_group pc").append(puzzleItem_1,puzzleItem_2,puzzleItem_3,puzzleItem_4);
     fill=0;
 }
 
@@ -107,9 +100,9 @@ function puzzlePic() {
     var group = random(1, 5);
     if(group == 1) {
         $(".puzzle-1").attr("src","./img/puzzle-1-1.png").attr("data-order","1");
-        $(".puzzle-2").attr("src","./img/puzzle-1-2.png").attr("data-order","2");
-        $(".puzzle-3").attr("src","./img/puzzle-1-3.png").attr("data-order","3");
-        $(".puzzle-4").attr("src","./img/puzzle-1-4.png").attr("data-order","4");
+        $(".puzzle-3").attr("src","./img/puzzle-1-2.png").attr("data-order","2");
+        $(".puzzle-4").attr("src","./img/puzzle-1-3.png").attr("data-order","3");
+        $(".puzzle-2").attr("src","./img/puzzle-1-4.png").attr("data-order","4");
     }else if(group == 2) {
         $(".puzzle-3").attr("src","./img/puzzle-2-1.png").attr("data-order","1");
         $(".puzzle-1").attr("src","./img/puzzle-2-2.png").attr("data-order","2");
@@ -137,3 +130,17 @@ function puzzlePic() {
 function random(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
+
+// 手機版
+var puzzleM_1, puzzleM_2, puzzleM_3, puzzleM_4;
+puzzleM_1 = document.getElementById('puzzleM-1');
+puzzleM_2 = document.getElementById('puzzleM-2');
+puzzleM_3 = document.getElementById('puzzleM-3');
+puzzleM_4 = document.getElementById('puzzleM-4');
+puzzleM_1.addEventListener('touchmove', function (ev) {
+    //grab the location of the touch
+    var touchLocation = ev.targetTouches[0];
+    //assign mustachio new coordinates based on the touch
+    puzzleM_1.style.left = touchLocation.pageX + 'px';
+    puzzleM_1.style.top = touchLocation.pageY + 'px';
+})
