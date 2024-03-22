@@ -67,15 +67,15 @@ function dragDrop() {
     // }
 }
 
-$(document).on("click", ".empty_item", function () {
-    let img = $(this).children("img");
-    $(this).children("img").remove();
-    $(".puzzle_group").append(img);
-    this.classList.remove('hasPic');
-    if(img.length ==! 0) {
-        fill--;
-    }
-});
+// $(document).on("click", ".empty_item", function () {
+//     let img = $(this).children("img");
+//     $(this).children("img").remove();
+//     $(".puzzle_group").append(img);
+//     this.classList.remove('hasPic');
+//     if(img.length ==! 0) {
+//         fill--;
+//     }
+// });
 
 var empty_1_x = $(".empty-1").css("left");
 var empty_1_y = $(".empty-1").css("top");
@@ -96,7 +96,7 @@ $(".fail_btn").click(function(){
     // resetPuzzle();
     // puzzlePic();
     // initPuzzle();
-    $(".empty_item").removeClass("hasPic");
+    // $(".empty_item").removeClass("hasPic");
 })
 
 puzzlePic();
