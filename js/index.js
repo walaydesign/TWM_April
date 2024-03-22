@@ -34,22 +34,37 @@ function dragLeave() {
 }
 
 function dragDrop() {
-    if(!this.classList.contains('hasPic')) {
-        this.append(puzzle);
-        this.classList.add('hasPic');
+    var emptyOrder = this.getAttribute("data-order");
+    var puzzleOrder = puzzle.getAttribute("data-order");
+    // console.log("emptyOrder=" + emptyOrder + ",puzzleOrder=" + puzzleOrder);
+    if(emptyOrder == puzzleOrder) {
         fill++;
-        if(fill == 4) {
-            let img_1 = $(".empty-1").children("img").data("order");
-            let img_2 = $(".empty-2").children("img").data("order");
-            let img_3 = $(".empty-3").children("img").data("order");
-            let img_4 = $(".empty-4").children("img").data("order");
-            if(img_1 == 1 && img_2 == 2 && img_3 == 3 && img_4 == 4) {
-                $(".sucess").show();
-            }else {
-                $(".fail").show();
-            }
-        }
+        this.append(puzzle);
+        // $(".sucess").show();
+    }else {
+        $(".fail").show();
     }
+
+    if(fill == 4) {
+        $(".sucess").show();
+    }
+
+    // if(!this.classList.contains('hasPic')) {
+    //     this.append(puzzle);
+    //     this.classList.add('hasPic');
+    //     fill++;
+    //     if(fill == 4) {
+    //         let img_1 = $(".empty-1").children("img").data("order");
+    //         let img_2 = $(".empty-2").children("img").data("order");
+    //         let img_3 = $(".empty-3").children("img").data("order");
+    //         let img_4 = $(".empty-4").children("img").data("order");
+    //         if(img_1 == 1 && img_2 == 2 && img_3 == 3 && img_4 == 4) {
+    //             $(".sucess").show();
+    //         }else {
+    //             $(".fail").show();
+    //         }
+    //     }
+    // }
 }
 
 $(document).on("click", ".empty_item", function () {
@@ -64,23 +79,23 @@ $(document).on("click", ".empty_item", function () {
 
 var empty_1_x = $(".empty-1").css("left");
 var empty_1_y = $(".empty-1").css("top");
-// console.log("1_x=" + empty_1_x + ",1+y=" + empty_1_y);
+
 var empty_2_x = $(".empty-2").css("left");
 var empty_2_y = $(".empty-2").css("top");
-// console.log("1_x=" + empty_2_x + ",1+y=" + empty_2_y);
+
 var empty_3_x = $(".empty-3").css("left");
 var empty_3_y = $(".empty-3").css("top");
-// console.log("1_x=" + empty_3_x + ",1+y=" + empty_3_y);
+
 var empty_4_x = $(".empty-4").css("left");
 var empty_4_y = $(".empty-4").css("top");
-// console.log("1_x=" + empty_4_x + ",1+y=" + empty_4_y);
+
 
 $(".fail_btn").click(function(){
     $(this).parents(".fail").hide();
-    $(".empty_item>img").remove();
-    resetPuzzle();
-    puzzlePic();
-    initPuzzle();
+    // $(".empty_item>img").remove();
+    // resetPuzzle();
+    // puzzlePic();
+    // initPuzzle();
     $(".empty_item").removeClass("hasPic");
 })
 
@@ -147,6 +162,10 @@ function puzzlePic() {
 function random(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
+
+$(".start_btn").click(function() {
+    $(this).parents(".start").hide();
+})
 
 // 手機版
 window.onload = function() {

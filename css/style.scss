@@ -147,3 +147,31 @@ body {
         cursor: pointer;
     }
 }
+
+.start {
+    position: absolute;
+    width: 80%;
+    top: 21.8%;
+    left: 10%;
+    &_mask {
+        width: 100%;
+    }
+    &_btn {
+        position: absolute;
+        width: 74%;
+        top: 50%;
+        left: 13%;
+        transform: translateY(-50%);
+        animation: startBtn 0.8s ease-in-out infinite alternate;
+        cursor: pointer;
+    }
+}
+
+@keyframes startBtn {
+    0% {
+        transform: translateY(-58%);
+    }
+    100% {
+        transform: translateY(-42%);
+    }
+}

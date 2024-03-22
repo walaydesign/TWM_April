@@ -152,4 +152,49 @@ body {
   left: 20%;
   cursor: pointer;
 }
+
+.start {
+  position: absolute;
+  width: 80%;
+  top: 21.8%;
+  left: 10%;
+}
+
+.start_mask {
+  width: 100%;
+}
+
+.start_btn {
+  position: absolute;
+  width: 74%;
+  top: 50%;
+  left: 13%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-animation: startBtn 0.8s ease-in-out infinite alternate;
+          animation: startBtn 0.8s ease-in-out infinite alternate;
+  cursor: pointer;
+}
+
+@-webkit-keyframes startBtn {
+  0% {
+    -webkit-transform: translateY(-58%);
+            transform: translateY(-58%);
+  }
+  100% {
+    -webkit-transform: translateY(-42%);
+            transform: translateY(-42%);
+  }
+}
+
+@keyframes startBtn {
+  0% {
+    -webkit-transform: translateY(-58%);
+            transform: translateY(-58%);
+  }
+  100% {
+    -webkit-transform: translateY(-42%);
+            transform: translateY(-42%);
+  }
+}
 /*# sourceMappingURL=style.css.map */
