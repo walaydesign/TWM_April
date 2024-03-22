@@ -34,17 +34,20 @@ function dragLeave() {
 }
 
 function dragDrop() {
-    this.append(puzzle);
-    fill++;
-    if(fill == 4) {
-        let img_1 = $(".empty-1").children("img").data("order");
-        let img_2 = $(".empty-2").children("img").data("order");
-        let img_3 = $(".empty-3").children("img").data("order");
-        let img_4 = $(".empty-4").children("img").data("order");
-        if(img_1 == 1 && img_2 == 2 && img_3 == 3 && img_4 == 4) {
-            $(".sucess").show();
-        }else {
-            $(".fail").show();
+    if(!this.classList.contains('hasPic')) {
+        this.append(puzzle);
+        this.classList.add('hasPic');
+        fill++;
+        if(fill == 4) {
+            let img_1 = $(".empty-1").children("img").data("order");
+            let img_2 = $(".empty-2").children("img").data("order");
+            let img_3 = $(".empty-3").children("img").data("order");
+            let img_4 = $(".empty-4").children("img").data("order");
+            if(img_1 == 1 && img_2 == 2 && img_3 == 3 && img_4 == 4) {
+                $(".sucess").show();
+            }else {
+                $(".fail").show();
+            }
         }
     }
 }
@@ -53,10 +56,15 @@ $(document).on("click", ".empty_item", function () {
     let img = $(this).children("img");
     $(this).children("img").remove();
     $(".puzzle_group").append(img);
+    this.classList.remove('hasPic');
     if(img.length ==! 0) {
         fill--;
     }
-})
+});
+
+var empty_1_x = $(".empty-1").css("left");
+var empty_1_y = $(".empty-1").css("top");
+console.log("1_x=" + empty_1_x + ",1+y=" + empty_1_y);
 
 $(".fail_btn").click(function(){
     $(this).parents(".fail").hide();
@@ -69,11 +77,11 @@ $(".fail_btn").click(function(){
 puzzlePic();
 
 function resetPuzzle() {
-    let puzzleItem_1 = $("<img class='puzzle_item puzzle-1' id='puzzle-1' draggable='true'></img>");
-    let puzzleItem_2 = $("<img class='puzzle_item puzzle-2' id='puzzle-2' draggable='true'></img>");
-    let puzzleItem_3 = $("<img class='puzzle_item puzzle-3' id='puzzle-3' draggable='true'></img>");
-    let puzzleItem_4 = $("<img class='puzzle_item puzzle-4' id='puzzle-4' draggable='true'></img>");
-    $(".puzzle_group pc").append(puzzleItem_1,puzzleItem_2,puzzleItem_3,puzzleItem_4);
+    let puzzleItem_1 = $("<img class='puzzle_item puzzle-1' id='puzzle-1' draggable='true'>");
+    let puzzleItem_2 = $("<img class='puzzle_item puzzle-2' id='puzzle-2' draggable='true'>");
+    let puzzleItem_3 = $("<img class='puzzle_item puzzle-3' id='puzzle-3' draggable='true'>");
+    let puzzleItem_4 = $("<img class='puzzle_item puzzle-4' id='puzzle-4' draggable='true'>");
+    $(".puzzle_group.pc").append(puzzleItem_1,puzzleItem_2,puzzleItem_3,puzzleItem_4);
     fill=0;
 }
 
