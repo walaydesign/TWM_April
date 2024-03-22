@@ -32,8 +32,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  -webkit-user-select: none;
-  -moz-user-select: none;
 }
 
 .puzzle_item.puzzle-1 {
@@ -54,6 +52,15 @@ body {
 
 .puzzle_group.m {
   display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .puzzle_group.pc {
+    display: none;
+  }
+  .puzzle_group.m {
+    display: block;
+  }
 }
 
 .empty_item {

@@ -32,8 +32,8 @@ body {
         background-position: center;
         background-repeat: no-repeat;
         // pointer-events: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
+        // -webkit-user-select: none;
+        // -moz-user-select: none;
         &.puzzle {
             &-1 {
                 left: 13%;
@@ -54,16 +54,16 @@ body {
             display: none;
         }
     }
-    // @media screen and (max-width: 991px) {
-    //     &_group {
-    //         &.pc {
-    //             display: none;
-    //         }
-    //         &.m {
-    //             display: block;
-    //         }
-    //     }
-    // }
+    @media screen and (max-width: 991px) {
+        &_group {
+            &.pc {
+                display: none;
+            }
+            &.m {
+                display: block;
+            }
+        }
+    }
 }
 
 .empty_item {
