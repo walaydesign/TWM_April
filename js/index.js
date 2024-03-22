@@ -64,7 +64,16 @@ $(document).on("click", ".empty_item", function () {
 
 var empty_1_x = $(".empty-1").css("left");
 var empty_1_y = $(".empty-1").css("top");
-console.log("1_x=" + empty_1_x + ",1+y=" + empty_1_y);
+// console.log("1_x=" + empty_1_x + ",1+y=" + empty_1_y);
+var empty_2_x = $(".empty-2").css("left");
+var empty_2_y = $(".empty-2").css("top");
+// console.log("1_x=" + empty_2_x + ",1+y=" + empty_2_y);
+var empty_3_x = $(".empty-3").css("left");
+var empty_3_y = $(".empty-3").css("top");
+// console.log("1_x=" + empty_3_x + ",1+y=" + empty_3_y);
+var empty_4_x = $(".empty-4").css("left");
+var empty_4_y = $(".empty-4").css("top");
+// console.log("1_x=" + empty_4_x + ",1+y=" + empty_4_y);
 
 $(".fail_btn").click(function(){
     $(this).parents(".fail").hide();
@@ -72,6 +81,7 @@ $(".fail_btn").click(function(){
     resetPuzzle();
     puzzlePic();
     initPuzzle();
+    $(".empty_item").removeClass("hasPic");
 })
 
 puzzlePic();
@@ -145,13 +155,17 @@ window.onload = function() {
     puzzleM_2 = document.getElementById('puzzleM-2');
     puzzleM_3 = document.getElementById('puzzleM-3');
     puzzleM_4 = document.getElementById('puzzleM-4');
+    var puzzleLength = puzzleM_1.clientHeight;
+    // console.log("heihgt=" + puzzleLength);
     var nowX = document.getElementById('x-posi');
     var nowY = document.getElementById('y-posi');
 
     puzzleM_1.addEventListener('touchmove', function (e) {
         var touchLocation = e.targetTouches[0];
-        puzzleM_1.style.left = touchLocation.pageX + 'px';
-        puzzleM_1.style.top = touchLocation.pageY + 'px';
+        var puzzleM_1_x = touchLocation.pageX - puzzleLength / 2;
+        var puzzleM_1_y = touchLocation.pageY - puzzleLength / 2;
+        puzzleM_1.style.left = puzzleM_1_x + 'px';
+        puzzleM_1.style.top = puzzleM_1_y + 'px';
         document.documentElement.style.overflowY = "hidden";
         var x_posi = puzzleM_1.style.left;
         var y_posi = puzzleM_1.style.top;
@@ -161,8 +175,10 @@ window.onload = function() {
 
     puzzleM_2.addEventListener('touchmove', function (e) {
         var touchLocation = e.targetTouches[0];
-        puzzleM_2.style.left = touchLocation.pageX + 'px';
-        puzzleM_2.style.top = touchLocation.pageY + 'px';
+        var puzzleM_2_x = touchLocation.pageX - puzzleLength / 2;
+        var puzzleM_2_y = touchLocation.pageY - puzzleLength / 2;
+        puzzleM_2.style.left = puzzleM_2_x + 'px';
+        puzzleM_2.style.top = puzzleM_2_y + 'px';
         document.documentElement.style.overflowY = "hidden";
         var x_posi = puzzleM_2.style.left;
         var y_posi = puzzleM_2.style.top;
@@ -172,8 +188,10 @@ window.onload = function() {
 
     puzzleM_3.addEventListener('touchmove', function (e) {
         var touchLocation = e.targetTouches[0];
-        puzzleM_3.style.left = touchLocation.pageX + 'px';
-        puzzleM_3.style.top = touchLocation.pageY + 'px';
+        var puzzleM_3_x = touchLocation.pageX - puzzleLength / 2;
+        var puzzleM_3_y = touchLocation.pageY - puzzleLength / 2;
+        puzzleM_3.style.left = puzzleM_3_x + 'px';
+        puzzleM_3.style.top = puzzleM_3_y + 'px';
         document.documentElement.style.overflowY = "hidden";
         var x_posi = puzzleM_3.style.left;
         var y_posi = puzzleM_3.style.top;
@@ -183,8 +201,10 @@ window.onload = function() {
 
     puzzleM_4.addEventListener('touchmove', function (e) {
         var touchLocation = e.targetTouches[0];
-        puzzleM_4.style.left = touchLocation.pageX + 'px';
-        puzzleM_4.style.top = touchLocation.pageY + 'px';
+        var puzzleM_4_x = touchLocation.pageX - puzzleLength / 2;
+        var puzzleM_4_y = touchLocation.pageY - puzzleLength / 2;
+        puzzleM_4.style.left = puzzleM_4_x + 'px';
+        puzzleM_4.style.top = puzzleM_4_y + 'px';
         document.documentElement.style.overflowY = "hidden";
         var x_posi = puzzleM_4.style.left;
         var y_posi = puzzleM_4.style.top;
