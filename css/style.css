@@ -11,6 +11,7 @@ body {
   -ms-touch-action: manipulation;
       touch-action: manipulation;
   height: 100vh;
+  overflow: hidden;
 }
 
 .container {

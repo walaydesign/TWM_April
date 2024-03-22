@@ -62,8 +62,8 @@ $(".fail_btn").click(function(){
     $(this).parents(".fail").hide();
     $(".empty_item>img").remove();
     resetPuzzle();
-    initPuzzle();
     puzzlePic();
+    initPuzzle();
 })
 
 puzzlePic();
@@ -137,12 +137,18 @@ window.onload = function() {
     puzzleM_2 = document.getElementById('puzzleM-2');
     puzzleM_3 = document.getElementById('puzzleM-3');
     puzzleM_4 = document.getElementById('puzzleM-4');
+    var nowX = document.getElementById('x-posi');
+    var nowY = document.getElementById('y-posi');
 
     puzzleM_1.addEventListener('touchmove', function (e) {
         var touchLocation = e.targetTouches[0];
         puzzleM_1.style.left = touchLocation.pageX + 'px';
         puzzleM_1.style.top = touchLocation.pageY + 'px';
         document.documentElement.style.overflowY = "hidden";
+        var x_posi = puzzleM_1.style.left;
+        var y_posi = puzzleM_1.style.top;
+        nowX.innerHTML = x_posi;
+        nowY.innerHTML = y_posi;
     })
 
     puzzleM_2.addEventListener('touchmove', function (e) {
@@ -150,6 +156,10 @@ window.onload = function() {
         puzzleM_2.style.left = touchLocation.pageX + 'px';
         puzzleM_2.style.top = touchLocation.pageY + 'px';
         document.documentElement.style.overflowY = "hidden";
+        var x_posi = puzzleM_2.style.left;
+        var y_posi = puzzleM_2.style.top;
+        nowX.innerHTML = x_posi;
+        nowY.innerHTML = y_posi;
     })
 
     puzzleM_3.addEventListener('touchmove', function (e) {
@@ -157,6 +167,10 @@ window.onload = function() {
         puzzleM_3.style.left = touchLocation.pageX + 'px';
         puzzleM_3.style.top = touchLocation.pageY + 'px';
         document.documentElement.style.overflowY = "hidden";
+        var x_posi = puzzleM_3.style.left;
+        var y_posi = puzzleM_3.style.top;
+        nowX.innerHTML = x_posi;
+        nowY.innerHTML = y_posi;
     })
 
     puzzleM_4.addEventListener('touchmove', function (e) {
@@ -164,6 +178,10 @@ window.onload = function() {
         puzzleM_4.style.left = touchLocation.pageX + 'px';
         puzzleM_4.style.top = touchLocation.pageY + 'px';
         document.documentElement.style.overflowY = "hidden";
+        var x_posi = puzzleM_4.style.left;
+        var y_posi = puzzleM_4.style.top;
+        nowX.innerHTML = x_posi;
+        nowY.innerHTML = y_posi;
     })
 }
 
