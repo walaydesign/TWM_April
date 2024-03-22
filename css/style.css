@@ -22,6 +22,8 @@ body {
 .bg {
   width: 100%;
   pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 .puzzle_item {
