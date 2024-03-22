@@ -17,12 +17,10 @@ function dragStart() {
 }
 
 function dragEnd() {
-    // console.log("end");
 }
 
 function dragOver(e) {
     e.preventDefault();
-    // console.log("over");
 }
 
 function dragEnter(e) {
@@ -30,17 +28,14 @@ function dragEnter(e) {
 }
 
 function dragLeave() {
-    // console.log("leave");
 }
 
 function dragDrop() {
     var emptyOrder = this.getAttribute("data-order");
     var puzzleOrder = puzzle.getAttribute("data-order");
-    // console.log("emptyOrder=" + emptyOrder + ",puzzleOrder=" + puzzleOrder);
     if(emptyOrder == puzzleOrder) {
         fill++;
         this.append(puzzle);
-        // $(".sucess").show();
     }else {
         $(".fail").show();
     }
@@ -48,57 +43,25 @@ function dragDrop() {
     if(fill == 4) {
         $(".sucess").show();
     }
-
-    // if(!this.classList.contains('hasPic')) {
-    //     this.append(puzzle);
-    //     this.classList.add('hasPic');
-    //     fill++;
-    //     if(fill == 4) {
-    //         let img_1 = $(".empty-1").children("img").data("order");
-    //         let img_2 = $(".empty-2").children("img").data("order");
-    //         let img_3 = $(".empty-3").children("img").data("order");
-    //         let img_4 = $(".empty-4").children("img").data("order");
-    //         if(img_1 == 1 && img_2 == 2 && img_3 == 3 && img_4 == 4) {
-    //             $(".sucess").show();
-    //         }else {
-    //             $(".fail").show();
-    //         }
-    //     }
-    // }
 }
-
-// $(document).on("click", ".empty_item", function () {
-//     let img = $(this).children("img");
-//     $(this).children("img").remove();
-//     $(".puzzle_group").append(img);
-//     this.classList.remove('hasPic');
-//     if(img.length ==! 0) {
-//         fill--;
-//     }
-// });
 
 
 
 
 $(".fail_btn").click(function(){
     $(this).parents(".fail").hide();
-    // $(".empty_item>img").remove();
-    // resetPuzzle();
-    // puzzlePic();
-    // initPuzzle();
-    // $(".empty_item").removeClass("hasPic");
 })
 
 puzzlePic();
 
-function resetPuzzle() {
-    let puzzleItem_1 = $("<img class='puzzle_item puzzle-1' id='puzzle-1' draggable='true'>");
-    let puzzleItem_2 = $("<img class='puzzle_item puzzle-2' id='puzzle-2' draggable='true'>");
-    let puzzleItem_3 = $("<img class='puzzle_item puzzle-3' id='puzzle-3' draggable='true'>");
-    let puzzleItem_4 = $("<img class='puzzle_item puzzle-4' id='puzzle-4' draggable='true'>");
-    $(".puzzle_group.pc").append(puzzleItem_1,puzzleItem_2,puzzleItem_3,puzzleItem_4);
-    fill=0;
-}
+// function resetPuzzle() {
+//     let puzzleItem_1 = $("<img class='puzzle_item puzzle-1' id='puzzle-1' draggable='true'>");
+//     let puzzleItem_2 = $("<img class='puzzle_item puzzle-2' id='puzzle-2' draggable='true'>");
+//     let puzzleItem_3 = $("<img class='puzzle_item puzzle-3' id='puzzle-3' draggable='true'>");
+//     let puzzleItem_4 = $("<img class='puzzle_item puzzle-4' id='puzzle-4' draggable='true'>");
+//     $(".puzzle_group.pc").append(puzzleItem_1,puzzleItem_2,puzzleItem_3,puzzleItem_4);
+//     fill=0;
+// }
 
 function initPuzzle() {
     puzzle_1 = document.getElementById('puzzle-1');
@@ -170,39 +133,31 @@ window.onload = function() {
     var emptyLength = emptyItem.clientHeight;
     var puzzleItem = document.getElementById('puzzleM-1');
     var puzzleLength = puzzleItem.clientHeight;
-    // console.log("heihgt=" + puzzleLength);
-    // var nowX = document.getElementById('x-posi');
-    // var nowY = document.getElementById('y-posi');
 
     var empty_1_x_start = parseInt($(".empty-1").css("left"));
     var empty_1_x_end = empty_1_x_start + emptyLength;
     var empty_1_y_start = parseInt($(".empty-1").css("top"));
     var empty_1_y_end = empty_1_y_start + emptyLength;
-    // console.log(empty_1_x_start, empty_1_x_end, empty_1_y_start, empty_1_y_end);
     
     var empty_2_x_start = parseInt($(".empty-2").css("left"));
     var empty_2_x_end = empty_2_x_start + emptyLength;
     var empty_2_y_start = parseInt($(".empty-2").css("top"));
     var empty_2_y_end = empty_2_y_start + emptyLength;
-    // console.log(empty_2_x_start, empty_2_x_end, empty_2_y_start, empty_2_y_end);
 
     var empty_3_x_start = parseInt($(".empty-3").css("left"));
     var empty_3_x_end = empty_3_x_start + emptyLength;
     var empty_3_y_start = parseInt($(".empty-3").css("top"));
     var empty_3_y_end = empty_3_y_start + emptyLength;
-    // console.log(empty_3_x_start, empty_3_x_end, empty_3_y_start, empty_3_y_end);
 
     var empty_4_x_start = parseInt($(".empty-4").css("left"));
     var empty_4_x_end = empty_4_x_start + emptyLength;
     var empty_4_y_start = parseInt($(".empty-4").css("top"));
     var empty_4_y_end = empty_4_y_start + emptyLength;
-    // console.log(empty_4_x_start, empty_4_x_end, empty_4_y_start, empty_4_y_end);
 
     
     var location_x_1, location_y_1, touchh=false;
     var puzzleM_1_oriX = $("#puzzleM-1").css("left");
     var puzzleM_1_oriY = $("#puzzleM-1").css("top");
-    // console.log(puzzleM_1_oriX, puzzleM_1_oriY);
     puzzleM_1.addEventListener('touchmove', function (e) {
         var touchLocation = e.targetTouches[0];
         location_x_1 = touchLocation.pageX - puzzleLength / 2;
@@ -214,13 +169,17 @@ window.onload = function() {
     })
 
     puzzleM_1.addEventListener('touchend', function (e) {
+        console.log("fill=" + fill);
         var order = this.getAttribute("data-order");
         if(location_x_1 >= empty_1_x_start && location_x_1 <= empty_1_x_end) {
             if(location_y_1 >= empty_1_y_start && location_y_1 <= empty_1_y_end) {
-                // console.log(fill);
                 if(order == 1) {
                     $(".empty-1").append(this);
                     fill++;
+                    // console.log("1-1");
+                    if(fill == 4) {
+                        $(".sucess").show();
+                    }
                 }else {
                     if(touchh==true) {
                         $(".fail").show();
@@ -232,11 +191,14 @@ window.onload = function() {
         }
         if(location_x_1 >= empty_2_x_start && location_x_1 <= empty_2_x_end) {
             if(location_y_1 >= empty_2_y_start && location_y_1 <= empty_2_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 2) {
                     $(".empty-2").append(this);
                     fill++;
+                    // console.log("1-2");
+                    if(fill == 4) {
+                        $(".sucess").show();
+                    }
                 }else {
                     if(touchh==true) {
                         $(".fail").show();
@@ -248,11 +210,14 @@ window.onload = function() {
         }
         if(location_x_1 >= empty_3_x_start && location_x_1 <= empty_3_x_end) {
             if(location_y_1 >= empty_3_y_start && location_y_1 <= empty_3_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 3) {
                     $(".empty-3").append(this);
                     fill++;
+                    // console.log("1-3");
+                    if(fill == 4) {
+                        $(".sucess").show();
+                    }
                 }else {
                     if(touchh==true) {
                         $(".fail").show();
@@ -264,11 +229,14 @@ window.onload = function() {
         }
         if(location_x_1 >= empty_4_x_start && location_x_1 <= empty_4_x_end) {
             if(location_y_1 >= empty_4_y_start && location_y_1 <= empty_4_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 4) {
                     $(".empty-4").append(this);
                     fill++;
+                    // console.log("1-4");
+                    if(fill == 4) {
+                        $(".sucess").show();
+                    }
                 }else {
                     if(touchh==true) {
                         $(".fail").show();
@@ -295,13 +263,17 @@ window.onload = function() {
     })
 
     puzzleM_2.addEventListener('touchend', function (e) {
+        console.log("fill=" + fill);
         var order = this.getAttribute("data-order");
         if(location_x_2 >= empty_1_x_start && location_x_2 <= empty_1_x_end) {
             if(location_y_2 >= empty_1_y_start && location_y_2 <= empty_1_y_end) {
-                // console.log(fill);
                 if(order == 1) {
                     $(".empty-1").append(this);
                     fill++;
+                    // console.log("2-1");
+                    if(fill == 4) {
+                        $(".sucess").show();
+                    }
                 }else {
                     if(touchh==true) {
                         $(".fail").show();
@@ -313,11 +285,14 @@ window.onload = function() {
         }
         if(location_x_2 >= empty_2_x_start && location_x_2 <= empty_2_x_end) {
             if(location_y_2 >= empty_2_y_start && location_y_2 <= empty_2_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 2) {
                     $(".empty-2").append(this);
                     fill++;
+                    // console.log("2-2");
+                    if(fill == 4) {
+                        $(".sucess").show();
+                    }
                 }else {
                     if(touchh==true) {
                         $(".fail").show();
@@ -329,11 +304,14 @@ window.onload = function() {
         }
         if(location_x_2 >= empty_3_x_start && location_x_2 <= empty_3_x_end) {
             if(location_y_2 >= empty_3_y_start && location_y_2 <= empty_3_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 3) {
                     $(".empty-3").append(this);
                     fill++;
+                    // console.log("2-3");
+                    if(fill == 4) {
+                        $(".sucess").show();
+                    }
                 }else {
                     if(touchh==true) {
                         $(".fail").show();
@@ -345,11 +323,14 @@ window.onload = function() {
         }
         if(location_x_2 >= empty_4_x_start && location_x_2 <= empty_4_x_end) {
             if(location_y_2 >= empty_4_y_start && location_y_2 <= empty_4_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 4) {
                     $(".empty-4").append(this);
                     fill++;
+                    // console.log("2-4");
+                    if(fill == 4) {
+                        $(".sucess").show();
+                    }
                 }else {
                     if(touchh==true) {
                         $(".fail").show();
@@ -377,14 +358,14 @@ window.onload = function() {
     })
 
     puzzleM_3.addEventListener('touchend', function (e) {
+        console.log("fill=" + fill);
         var order = this.getAttribute("data-order");
-        // console.log("location_x_3=" + location_x_3 + ",location_y_3=" + location_y_3);
         if(location_x_3 >= empty_1_x_start && location_x_3 <= empty_1_x_end) {
             if(location_y_3 >= empty_1_y_start && location_y_3 <= empty_1_y_end) {
-                // console.log(fill);
                 if(order == 1) {
                     $(".empty-1").append(this);
                     fill++;
+                    // console.log("3-1");
                     if(fill == 4) {
                         $(".sucess").show();
                     }
@@ -399,11 +380,11 @@ window.onload = function() {
         }
         if(location_x_3 >= empty_2_x_start && location_x_3 <= empty_2_x_end) {
             if(location_y_3 >= empty_2_y_start && location_y_3 <= empty_2_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 2) {
                     $(".empty-2").append(this);
                     fill++;
+                    // console.log("3-2");
                     if(fill == 4) {
                         $(".sucess").show();
                     }
@@ -418,11 +399,11 @@ window.onload = function() {
         }
         if(location_x_3 >= empty_3_x_start && location_x_3 <= empty_3_x_end) {
             if(location_y_3 >= empty_3_y_start && location_y_3 <= empty_3_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 3) {
                     $(".empty-3").append(this);
                     fill++;
+                    // console.log("3-3");
                     if(fill == 4) {
                         $(".sucess").show();
                     }
@@ -437,11 +418,11 @@ window.onload = function() {
         }
         if(location_x_3 >= empty_4_x_start && location_x_3 <= empty_4_x_end) {
             if(location_y_3 >= empty_4_y_start && location_y_3 <= empty_4_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 4) {
                     $(".empty-4").append(this);
                     fill++;
+                    // console.log("3-4");
                     if(fill == 4) {
                         $(".sucess").show();
                     }
@@ -471,13 +452,14 @@ window.onload = function() {
     })
 
     puzzleM_4.addEventListener('touchend', function (e) {
+        console.log("fill=" + fill);
         var order = this.getAttribute("data-order");
         if(location_x_4 >= empty_1_x_start && location_x_4 <= empty_1_x_end) {
             if(location_y_4 >= empty_1_y_start && location_y_4 <= empty_1_y_end) {
-                // console.log(fill);
                 if(order == 1) {
                     $(".empty-1").append(this);
                     fill++;
+                    // console.log("4-1");
                     if(fill == 4) {
                         $(".sucess").show();
                     }
@@ -492,11 +474,11 @@ window.onload = function() {
         }
         if(location_x_4 >= empty_2_x_start && location_x_4 <= empty_2_x_end) {
             if(location_y_4 >= empty_2_y_start && location_y_4 <= empty_2_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 2) {
                     $(".empty-2").append(this);
                     fill++;
+                    // console.log("4-2");
                     if(fill == 4) {
                         $(".sucess").show();
                     }
@@ -511,11 +493,11 @@ window.onload = function() {
         }
         if(location_x_4 >= empty_3_x_start && location_x_4 <= empty_3_x_end) {
             if(location_y_4 >= empty_3_y_start && location_y_4 <= empty_3_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 3) {
                     $(".empty-3").append(this);
                     fill++;
+                    // console.log("4-3");
                     if(fill == 4) {
                         $(".sucess").show();
                     }
@@ -530,11 +512,11 @@ window.onload = function() {
         }
         if(location_x_4 >= empty_4_x_start && location_x_4 <= empty_4_x_end) {
             if(location_y_4 >= empty_4_y_start && location_y_4 <= empty_4_y_end) {
-                // console.log(fill);
                 var order = this.getAttribute("data-order");
                 if(order == 4) {
                     $(".empty-4").append(this);
                     fill++;
+                    // console.log("4-4");
                     if(fill == 4) {
                         $(".sucess").show();
                     }
