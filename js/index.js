@@ -138,10 +138,31 @@ window.onload = function() {
     puzzleM_3 = document.getElementById('puzzleM-3');
     puzzleM_4 = document.getElementById('puzzleM-4');
 
-    puzzleM_1.addEventListener('touchmove', function (e) {
+    puzzleM_.addEventListener('touchmove', function (e) {
         var touchLocation = e.targetTouches[0];
         puzzleM_1.style.left = touchLocation.pageX + 'px';
         puzzleM_1.style.top = touchLocation.pageY + 'px';
+        document.documentElement.style.overflowY = "hidden";
+    })
+
+    puzzleM_2.addEventListener('touchmove', function (e) {
+        var touchLocation = e.targetTouches[0];
+        puzzleM_2.style.left = touchLocation.pageX + 'px';
+        puzzleM_2.style.top = touchLocation.pageY + 'px';
+        document.documentElement.style.overflowY = "hidden";
+    })
+
+    puzzleM_3.addEventListener('touchmove', function (e) {
+        var touchLocation = e.targetTouches[0];
+        puzzleM_3.style.left = touchLocation.pageX + 'px';
+        puzzleM_3.style.top = touchLocation.pageY + 'px';
+        document.documentElement.style.overflowY = "hidden";
+    })
+
+    puzzleM_4.addEventListener('touchmove', function (e) {
+        var touchLocation = e.targetTouches[0];
+        puzzleM_4.style.left = touchLocation.pageX + 'px';
+        puzzleM_4.style.top = touchLocation.pageY + 'px';
         document.documentElement.style.overflowY = "hidden";
     })
 }
