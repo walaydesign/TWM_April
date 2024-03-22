@@ -132,15 +132,15 @@ function random(min, max) {
 }
 
 // 手機版
-var puzzleM_1, puzzleM_2, puzzleM_3, puzzleM_4;
-puzzleM_1 = document.getElementById('puzzleM-1');
-puzzleM_2 = document.getElementById('puzzleM-2');
-puzzleM_3 = document.getElementById('puzzleM-3');
-puzzleM_4 = document.getElementById('puzzleM-4');
-puzzleM_1.addEventListener('touchmove', function (ev) {
-    //grab the location of the touch
-    var touchLocation = ev.targetTouches[0];
-    //assign mustachio new coordinates based on the touch
-    puzzleM_1.style.left = touchLocation.pageX + 'px';
-    puzzleM_1.style.top = touchLocation.pageY + 'px';
-})
+// var puzzleM_1, puzzleM_2, puzzleM_3, puzzleM_4;
+// puzzleM_1 = document.getElementById('puzzleM-1');
+// puzzleM_2 = document.getElementById('puzzleM-2');
+// puzzleM_3 = document.getElementById('puzzleM-3');
+// puzzleM_4 = document.getElementById('puzzleM-4');
+// puzzleM_1.addEventListener('touchmove', function (ev) {
+//     var touchLocation = ev.targetTouches[0];
+//     puzzleM_1.style.left = touchLocation.pageX + 'px';
+//     puzzleM_1.style.top = touchLocation.pageY + 'px';
+// })
+
+// window.ontouchstart = function(e) { e.preventDefault(); };
