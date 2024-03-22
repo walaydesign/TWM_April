@@ -138,25 +138,25 @@ window.onload = function() {
     var empty_1_x_end = empty_1_x_start + emptyLength;
     var empty_1_y_start = parseFloat($(".empty-1").css("top"));
     var empty_1_y_end = empty_1_y_start + emptyLength;
-    console.log(empty_1_x_start, empty_1_x_end, empty_1_y_start, empty_1_y_end);
+    // console.log(empty_1_x_start, empty_1_x_end, empty_1_y_start, empty_1_y_end);
     
     var empty_2_x_start = parseFloat($(".empty-2").css("left"));
     var empty_2_x_end = empty_2_x_start + emptyLength;
     var empty_2_y_start = parseFloat($(".empty-2").css("top"));
     var empty_2_y_end = empty_2_y_start + emptyLength;
-    console.log(empty_2_x_start, empty_2_x_end, empty_2_y_start, empty_2_y_end);
+    // console.log(empty_2_x_start, empty_2_x_end, empty_2_y_start, empty_2_y_end);
 
     var empty_3_x_start = parseFloat($(".empty-3").css("left"));
     var empty_3_x_end = empty_3_x_start + emptyLength;
     var empty_3_y_start = parseFloat($(".empty-3").css("top"));
     var empty_3_y_end = empty_3_y_start + emptyLength;
-    console.log(empty_3_x_start, empty_3_x_end, empty_3_y_start, empty_3_y_end);
+    // console.log(empty_3_x_start, empty_3_x_end, empty_3_y_start, empty_3_y_end);
 
     var empty_4_x_start = parseFloat($(".empty-4").css("left"));
     var empty_4_x_end = empty_4_x_start + emptyLength;
     var empty_4_y_start = parseFloat($(".empty-4").css("top"));
     var empty_4_y_end = empty_4_y_start + emptyLength;
-    console.log(empty_4_x_start, empty_4_x_end, empty_4_y_start, empty_4_y_end);
+    // console.log(empty_4_x_start, empty_4_x_end, empty_4_y_start, empty_4_y_end);
 
     var empty_1 = document.getElementById('empty-1');
     var empty_2 = document.getElementById('empty-2');
@@ -198,7 +198,7 @@ window.onload = function() {
         puzzleMArray[j].addEventListener('touchend', function (e) {
             if(touchh==true) {
                 var order = this.getAttribute("data-order");
-                console.log("fill=" + fill);
+                // console.log("fill=" + fill);
                 for(var k=0; k<4; k++) {
                     if(location_x > emptyLocationArray[k][0] && location_x < emptyLocationArray[k][1]) {
                         if(location_y > emptyLocationArray[k][2] && location_y < emptyLocationArray[k][3]) {
@@ -217,7 +217,6 @@ window.onload = function() {
                             }
                         }
                     }else {
-
                         this.style.left = OriginArray[j][0];
                         this.style.top = OriginArray[j][1];
                     }
@@ -227,391 +226,9 @@ window.onload = function() {
             }
         })
     }
-
-    // document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
-
-    // document.ontouchstart = function(e){ 
-    //     e.preventDefault(); 
-    // }
-
-    
-    // var location_x_1, location_y_1, touchh=false;
-    // var puzzleM_1_oriX = $("#puzzleM-1").css("left");
-    // var puzzleM_1_oriY = $("#puzzleM-1").css("top");
-    // puzzleM_1.addEventListener('touchmove', function (e) {
-    //     var touchLocation = e.targetTouches[0];
-    //     location_x_1 = touchLocation.pageX - puzzleLength / 2;
-    //     location_y_1 = touchLocation.pageY - puzzleLength / 2;
-    //     puzzleM_1.style.left = location_x_1 + 'px';
-    //     puzzleM_1.style.top = location_y_1 + 'px';
-    //     document.documentElement.style.overflowY = "hidden";
-    //     touchh=true;
-    // })
-
-    // puzzleM_1.addEventListener('touchend', function (e) {
-    //     console.log("fill=" + fill);
-    //     var order = this.getAttribute("data-order");
-    //     if(location_x_1 >= empty_1_x_start && location_x_1 <= empty_1_x_end) {
-    //         if(location_y_1 >= empty_1_y_start && location_y_1 <= empty_1_y_end) {
-    //             if(order == 1) {
-    //                 $(".empty-1").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_1_oriX;
-    //                     this.style.top = puzzleM_1_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_1 >= empty_2_x_start && location_x_1 <= empty_2_x_end) {
-    //         if(location_y_1 >= empty_2_y_start && location_y_1 <= empty_2_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 2) {
-    //                 $(".empty-2").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_1_oriX;
-    //                     this.style.top = puzzleM_1_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_1 >= empty_3_x_start && location_x_1 <= empty_3_x_end) {
-    //         if(location_y_1 >= empty_3_y_start && location_y_1 <= empty_3_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 3) {
-    //                 $(".empty-3").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_1_oriX;
-    //                     this.style.top = puzzleM_1_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_1 >= empty_4_x_start && location_x_1 <= empty_4_x_end) {
-    //         if(location_y_1 >= empty_4_y_start && location_y_1 <= empty_4_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 4) {
-    //                 $(".empty-4").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_1_oriX;
-    //                     this.style.top = puzzleM_1_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     touchh=false;
-    // })
-
-    // var location_x_2, location_y_2;
-    // var puzzleM_2_oriX = $("#puzzleM-2").css("left");
-    // var puzzleM_2_oriY = $("#puzzleM-2").css("top");
-    // puzzleM_2.addEventListener('touchmove', function (e) {
-    //     var touchLocation = e.targetTouches[0];
-    //     location_x_2 = touchLocation.pageX - puzzleLength / 2;
-    //     location_y_2 = touchLocation.pageY - puzzleLength / 2;
-    //     puzzleM_2.style.left = location_x_2 + 'px';
-    //     puzzleM_2.style.top = location_y_2 + 'px';
-    //     document.documentElement.style.overflowY = "hidden";
-    //     touchh=true;
-    // })
-
-    // puzzleM_2.addEventListener('touchend', function (e) {
-    //     console.log("fill=" + fill);
-    //     var order = this.getAttribute("data-order");
-    //     if(location_x_2 >= empty_1_x_start && location_x_2 <= empty_1_x_end) {
-    //         if(location_y_2 >= empty_1_y_start && location_y_2 <= empty_1_y_end) {
-    //             if(order == 1) {
-    //                 $(".empty-1").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_2_oriX;
-    //                     this.style.top = puzzleM_2_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_2 >= empty_2_x_start && location_x_2 <= empty_2_x_end) {
-    //         if(location_y_2 >= empty_2_y_start && location_y_2 <= empty_2_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 2) {
-    //                 $(".empty-2").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_2_oriX;
-    //                     this.style.top = puzzleM_2_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_2 >= empty_3_x_start && location_x_2 <= empty_3_x_end) {
-    //         if(location_y_2 >= empty_3_y_start && location_y_2 <= empty_3_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 3) {
-    //                 $(".empty-3").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_2_oriX;
-    //                     this.style.top = puzzleM_2_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_2 >= empty_4_x_start && location_x_2 <= empty_4_x_end) {
-    //         if(location_y_2 >= empty_4_y_start && location_y_2 <= empty_4_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 4) {
-    //                 $(".empty-4").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_2_oriX;
-    //                     this.style.top = puzzleM_2_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     touchh=false;
-    // })
-
-
-    // var location_x_3, location_y_3;
-    // var puzzleM_3_oriX = $("#puzzleM-3").css("left");
-    // var puzzleM_3_oriY = $("#puzzleM-3").css("top");
-    // puzzleM_3.addEventListener('touchmove', function (e) {
-    //     var touchLocation = e.targetTouches[0];
-    //     location_x_3 = touchLocation.pageX - puzzleLength / 2;
-    //     location_y_3 = touchLocation.pageY - puzzleLength / 2;
-    //     puzzleM_3.style.left = location_x_3 + 'px';
-    //     puzzleM_3.style.top = location_y_3 + 'px';
-    //     document.documentElement.style.overflowY = "hidden";
-    //     touchh=true;
-    // })
-
-    // puzzleM_3.addEventListener('touchend', function (e) {
-    //     console.log("fill=" + fill);
-    //     var order = this.getAttribute("data-order");
-    //     if(location_x_3 >= empty_1_x_start && location_x_3 <= empty_1_x_end) {
-    //         if(location_y_3 >= empty_1_y_start && location_y_3 <= empty_1_y_end) {
-    //             if(order == 1) {
-    //                 $(".empty-1").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_3_oriX;
-    //                     this.style.top = puzzleM_3_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_3 >= empty_2_x_start && location_x_3 <= empty_2_x_end) {
-    //         if(location_y_3 >= empty_2_y_start && location_y_3 <= empty_2_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 2) {
-    //                 $(".empty-2").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_3_oriX;
-    //                     this.style.top = puzzleM_3_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_3 >= empty_3_x_start && location_x_3 <= empty_3_x_end) {
-    //         if(location_y_3 >= empty_3_y_start && location_y_3 <= empty_3_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 3) {
-    //                 $(".empty-3").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_3_oriX;
-    //                     this.style.top = puzzleM_3_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_3 >= empty_4_x_start && location_x_3 <= empty_4_x_end) {
-    //         if(location_y_3 >= empty_4_y_start && location_y_3 <= empty_4_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 4) {
-    //                 $(".empty-4").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_3_oriX;
-    //                     this.style.top = puzzleM_3_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     touchh=false;
-    // })
-
-    // var location_x_4, location_y_4;
-    // var puzzleM_4_oriX = $("#puzzleM-4").css("left");
-    // var puzzleM_4_oriY = $("#puzzleM-4").css("top");
-    // puzzleM_4.addEventListener('touchmove', function (e) {
-    //     var touchLocation = e.targetTouches[0];
-    //     location_x_4 = touchLocation.pageX - puzzleLength / 2;
-    //     location_y_4 = touchLocation.pageY - puzzleLength / 2;
-    //     puzzleM_4.style.left = location_x_4 + 'px';
-    //     puzzleM_4.style.top = location_y_4 + 'px';
-    //     document.documentElement.style.overflowY = "hidden";
-    //     touchh=true;
-    // })
-
-    // puzzleM_4.addEventListener('touchend', function (e) {
-    //     console.log("fill=" + fill);
-    //     var order = this.getAttribute("data-order");
-    //     if(location_x_4 >= empty_1_x_start && location_x_4 <= empty_1_x_end) {
-    //         if(location_y_4 >= empty_1_y_start && location_y_4 <= empty_1_y_end) {
-    //             if(order == 1) {
-    //                 $(".empty-1").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_4_oriX;
-    //                     this.style.top = puzzleM_4_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_4 >= empty_2_x_start && location_x_4 <= empty_2_x_end) {
-    //         if(location_y_4 >= empty_2_y_start && location_y_4 <= empty_2_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 2) {
-    //                 $(".empty-2").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_4_oriX;
-    //                     this.style.top = puzzleM_4_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_4 >= empty_3_x_start && location_x_4 <= empty_3_x_end) {
-    //         if(location_y_4 >= empty_3_y_start && location_y_4 <= empty_3_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 3) {
-    //                 $(".empty-3").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_4_oriX;
-    //                     this.style.top = puzzleM_4_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     if(location_x_4 >= empty_4_x_start && location_x_4 <= empty_4_x_end) {
-    //         if(location_y_4 >= empty_4_y_start && location_y_4 <= empty_4_y_end) {
-    //             var order = this.getAttribute("data-order");
-    //             if(order == 4) {
-    //                 $(".empty-4").append(this);
-    //                 fill++;
-    //                 if(fill == 4) {
-    //                     $(".sucess").show();
-    //                 }
-    //             }else {
-    //                 if(touchh==true) {
-    //                     $(".fail").show();
-    //                     this.style.left = puzzleM_4_oriX;
-    //                     this.style.top = puzzleM_4_oriY;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     touchh=false;
-    // })
 }
 
-// document.addEventListener("touchmove", function(event) {
-//     event.preventDefault() 
-// }, {passive: true});
-// bodyScroll(event);
-// scrControl(t);
-
-// 方法二：兼容IOS
 function bodyScroll(event){
     event.preventDefault();
 }
 
-// function scrControl(t){
-//     if(t == 0){ //禁止滚动
-//         document.body.addEventListener('touchmove', this.bodyScroll, { passive: false });
-//     }else if( t == 1){ //开启滚动
-//         document.body.removeEventListener('touchmove',this.bodyScroll, {passive: false});
-//     }
-// }
