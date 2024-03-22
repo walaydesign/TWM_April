@@ -1,3 +1,45 @@
+const puzzle = document.querySelectorAll('.puzzle_item');
+const empties = document.querySelectorAll('.empty_item');
+
+puzzle.addEventListener('dragstart', dragStart);
+puzzle.addEventListener('dragend', dragEnd);
+
+for(const empty of empties) {
+    empty.addEventListener('dragover', dragOver);
+    empty.addEventListener('dragenter', dragEnter);
+    empty.addEventListener('dragleave', dragLeave);
+    empty.addEventListener('drop', dragDrop);
+}
+
+function dragStart() {
+    console.log("start");
+}
+
+function dragEnd() {
+    console.log("end");
+}
+
+function dragOver(e) {
+    e.preventDefault();
+    // console.log("over");
+}
+
+function dragEnter(e) {
+    e.preventDefault();
+}
+
+function dragLeave() {
+    console.log("leave");
+}
+
+function dragDrop() {
+    console.log("drop");
+    this.append(puzzle);
+}
+
+
+
+
 // const boxes = document.querySelectorAll(".box"),
 //     image = document.querySelector(".image");
 
