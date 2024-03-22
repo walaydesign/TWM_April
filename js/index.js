@@ -137,18 +137,13 @@ window.onload = function() {
     puzzleM_2 = document.getElementById('puzzleM-2');
     puzzleM_3 = document.getElementById('puzzleM-3');
     puzzleM_4 = document.getElementById('puzzleM-4');
-    var top;
-    // puzzleM_1.addEventListener('click',function() {
-    //     top = $(document).scrollTop();
-    // })
+
     puzzleM_1.addEventListener('touchmove', function (e) {
         var touchLocation = e.targetTouches[0];
         puzzleM_1.style.left = touchLocation.pageX + 'px';
         puzzleM_1.style.top = touchLocation.pageY + 'px';
-        // $(document).scrollTop(top);
-        // document.documentElement.style.overflowY = "hidden";
+        document.documentElement.style.overflowY = "hidden";
     })
-
 }
 
 // document.addEventListener("touchmove", function(event) {
