@@ -10,6 +10,7 @@ body {
     touch-action: manipulation;
     // height: 100vh;
     // overflow: hidden;
+    overflow-x:hidden;
     @media screen and (max-width: 640px) {
         background-image: url(../img/bg_m.png);
         background-size: cover;
@@ -247,7 +248,7 @@ body {
             }
         }
     }
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: 640px) {
         &_btn {
             display: none;
             &-m {

@@ -10,6 +10,7 @@ body {
   margin: 0;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 640px) {
@@ -248,7 +249,7 @@ body {
   width: 100%;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 640px) {
   .start_btn {
     display: none;
   }
