@@ -145,23 +145,24 @@ puzzleM_1.addEventListener('touchmove', function (ev) {
     puzzleM_1.style.left = touchLocation.pageX + 'px';
     puzzleM_1.style.top = touchLocation.pageY + 'px';
     $(document).scrollTop(top);
+    document.documentElement.style.overflowY = "hidden";
 })
 
-document.addEventListener("touchmove", function(event) {
-    event.preventDefault() //不产生作用
-}, {passive: true});
-bodyScroll(event);
-scrControl(t);
+// document.addEventListener("touchmove", function(event) {
+//     event.preventDefault() 
+// }, {passive: true});
+// bodyScroll(event);
+// scrControl(t);
 
 // 方法二：兼容IOS
-function bodyScroll(event){
-    event.preventDefault();
-}
+// function bodyScroll(event){
+//     event.preventDefault();
+// }
 
-function scrControl(t){
-    if(t == 0){ //禁止滚动
-        document.body.addEventListener('touchmove', this.bodyScroll, { passive: false });
-    }else if( t == 1){ //开启滚动
-        document.body.removeEventListener('touchmove',this.bodyScroll, {passive: false});
-    }
-}
+// function scrControl(t){
+//     if(t == 0){ //禁止滚动
+//         document.body.addEventListener('touchmove', this.bodyScroll, { passive: false });
+//     }else if( t == 1){ //开启滚动
+//         document.body.removeEventListener('touchmove',this.bodyScroll, {passive: false});
+//     }
+// }
