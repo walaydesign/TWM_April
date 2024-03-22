@@ -10,6 +10,13 @@ body {
     touch-action: manipulation;
     // height: 100vh;
     // overflow: hidden;
+    @media screen and (max-width: 640px) {
+        background-image: url(../img/bg_m.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
 }
 
 .container {
@@ -24,6 +31,17 @@ body {
     pointer-events: none;
     -webkit-user-select: none;
     -moz-user-select: none;
+    &-m {
+        width: 100%;
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+    }
+    @media screen and (max-width: 640px) {
+        &-m {
+            display: none;
+        }
+    }
 }
 
 .puzzle {
@@ -56,6 +74,23 @@ body {
     &_group {
         &.m {
             display: none;
+            .puzzle_item {
+                top: 82%;
+                // &.puzzle {
+                //     &-1 {
+                //         left: 13%;
+                //     }
+                //     &-2 {
+                //         left: 32%;
+                //     }
+                //     &-3 {
+                //         left: 51%;
+                //     }
+                //     &-4 {
+                //         left: 70%;
+                //     }
+                // }
+            }
         }
     }
     @media screen and (max-width: 991px) {
@@ -130,6 +165,18 @@ body {
     }
 }
 
+.game {
+    position: absolute;
+    width: 95%;
+    top: 1%;
+    left: 2.5%;
+    @media screen and (max-width: 640px) {
+        position: static;
+        margin: 10px auto 0;
+        display: block;
+    }
+}
+
 .fail {
     position: absolute;
     width: 90%;
@@ -164,6 +211,27 @@ body {
         transform: translateY(-50%);
         animation: startBtn 0.8s ease-in-out infinite alternate;
         cursor: pointer;
+        &-m {
+            position: absolute;
+            width: 74%;
+            top: 50%;
+            left: 13%;
+            transform: translateY(-50%);
+            animation: startBtn 0.8s ease-in-out infinite alternate;
+            cursor: pointer;
+            display: none;
+            >img {
+                width: 100%;
+            }
+        }
+    }
+    @media screen and (max-width: 991px) {
+        &_btn {
+            display: none;
+            &-m {
+                display: block;
+            }
+        }
     }
 }
 

@@ -12,6 +12,16 @@ body {
       touch-action: manipulation;
 }
 
+@media screen and (max-width: 640px) {
+  body {
+    background-image: url(../img/bg_m.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+}
+
 .container {
   max-width: 640px;
   width: 100%;
@@ -24,6 +34,19 @@ body {
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+}
+
+.bg-m {
+  width: 100%;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+@media screen and (max-width: 640px) {
+  .bg-m {
+    display: none;
+  }
 }
 
 .puzzle_item {
@@ -54,6 +77,10 @@ body {
 
 .puzzle_group.m {
   display: none;
+}
+
+.puzzle_group.m .puzzle_item {
+  top: 82%;
 }
 
 @media screen and (max-width: 991px) {
@@ -133,6 +160,21 @@ body {
   left: 0;
 }
 
+.game {
+  position: absolute;
+  width: 95%;
+  top: 1%;
+  left: 2.5%;
+}
+
+@media screen and (max-width: 640px) {
+  .game {
+    position: static;
+    margin: 10px auto 0;
+    display: block;
+  }
+}
+
 .fail {
   position: absolute;
   width: 90%;
@@ -174,6 +216,32 @@ body {
   -webkit-animation: startBtn 0.8s ease-in-out infinite alternate;
           animation: startBtn 0.8s ease-in-out infinite alternate;
   cursor: pointer;
+}
+
+.start_btn-m {
+  position: absolute;
+  width: 74%;
+  top: 50%;
+  left: 13%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-animation: startBtn 0.8s ease-in-out infinite alternate;
+          animation: startBtn 0.8s ease-in-out infinite alternate;
+  cursor: pointer;
+  display: none;
+}
+
+.start_btn-m > img {
+  width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+  .start_btn {
+    display: none;
+  }
+  .start_btn-m {
+    display: block;
+  }
 }
 
 @-webkit-keyframes startBtn {
