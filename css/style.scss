@@ -31,9 +31,9 @@ body {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        pointer-events: none;
-        // -webkit-user-select: none;
-        // -moz-user-select: none;
+        // pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
         &.puzzle {
             &-1 {
                 left: 13%;
