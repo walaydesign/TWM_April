@@ -145,7 +145,7 @@ window.onload = function() {
     var puzzleItem = document.getElementById('puzzleM-1');
     var puzzleLength = puzzleItem.clientHeight;
 
-    var location_x_1, location_y_1, location_x_2, location_y_2, location_x_3, location_y_3, location_x_4, location_y_4; 
+    // var location_x_1, location_y_1, location_x_2, location_y_2, location_x_3, location_y_3, location_x_4, location_y_4; 
 
     var empty_1_x_start = parseInt($(".empty-1").css("left"));
     var empty_1_x_end = empty_1_x_start + emptyLength;
@@ -195,7 +195,8 @@ window.onload = function() {
     ];
     let emptyArray = [empty_1, empty_2, empty_3, empty_4];
 
-    const $body = document.querySelector('body');
+    const $body = document.querySelector('body.gameM');
+    $body.style.overflow = 'hidden';
 
 
     for(let j = 0; j < 4; j++) {
@@ -204,10 +205,9 @@ window.onload = function() {
             var touchLocation = e.targetTouches[0];
             location_x = touchLocation.pageX - puzzleLength / 2;
             location_y = touchLocation.pageY - puzzleLength / 2;
-            console.log("puzzleMArray[j]=" + puzzleMArray[j] + ",puzzleMArray[j]=" + puzzleMArray[j] + ",j=" + j);
+            // console.log("puzzleMArray[j]=" + puzzleMArray[j] + ",puzzleMArray[j]=" + puzzleMArray[j] + ",j=" + j);
             puzzleMArray[j].style.left = location_x + 'px';
             puzzleMArray[j].style.top = location_y + 'px';
-            $body.style.overflow = 'hidden';
             touchh=true;
         })
         puzzleMArray[j].addEventListener('touchend', function (e) {
