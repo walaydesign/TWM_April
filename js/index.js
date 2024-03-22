@@ -141,8 +141,8 @@ window.onload = function() {
     // puzzleM_1.addEventListener('click',function() {
     //     top = $(document).scrollTop();
     // })
-    puzzleM_1.addEventListener('touchmove', function (ev) {
-        var touchLocation = ev.targetTouches[0];
+    puzzleM_1.addEventListener('touchmove', function (e) {
+        var touchLocation = e.targetTouches[0];
         puzzleM_1.style.left = touchLocation.pageX + 'px';
         puzzleM_1.style.top = touchLocation.pageY + 'px';
         // $(document).scrollTop(top);
