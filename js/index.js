@@ -138,25 +138,21 @@ window.onload = function() {
     var empty_1_x_end = empty_1_x_start + emptyLength;
     var empty_1_y_start = parseFloat($(".empty-1").css("top"));
     var empty_1_y_end = empty_1_y_start + emptyLength;
-    // console.log(empty_1_x_start, empty_1_x_end, empty_1_y_start, empty_1_y_end);
     
     var empty_2_x_start = parseFloat($(".empty-2").css("left"));
     var empty_2_x_end = empty_2_x_start + emptyLength;
     var empty_2_y_start = parseFloat($(".empty-2").css("top"));
     var empty_2_y_end = empty_2_y_start + emptyLength;
-    // console.log(empty_2_x_start, empty_2_x_end, empty_2_y_start, empty_2_y_end);
 
     var empty_3_x_start = parseFloat($(".empty-3").css("left"));
     var empty_3_x_end = empty_3_x_start + emptyLength;
     var empty_3_y_start = parseFloat($(".empty-3").css("top"));
     var empty_3_y_end = empty_3_y_start + emptyLength;
-    // console.log(empty_3_x_start, empty_3_x_end, empty_3_y_start, empty_3_y_end);
 
     var empty_4_x_start = parseFloat($(".empty-4").css("left"));
     var empty_4_x_end = empty_4_x_start + emptyLength;
     var empty_4_y_start = parseFloat($(".empty-4").css("top"));
     var empty_4_y_end = empty_4_y_start + emptyLength;
-    // console.log(empty_4_x_start, empty_4_x_end, empty_4_y_start, empty_4_y_end);
 
     var empty_1 = document.getElementById('empty-1');
     var empty_2 = document.getElementById('empty-2');
@@ -190,7 +186,6 @@ window.onload = function() {
             var touchLocation = e.targetTouches[0];
             location_x = touchLocation.pageX - puzzleLength / 2;
             location_y = touchLocation.pageY - puzzleLength / 2;
-            // console.log("puzzleMArray[j]=" + puzzleMArray[j] + ",puzzleMArray[j]=" + puzzleMArray[j] + ",j=" + j);
             puzzleMArray[j].style.left = location_x + 'px';
             puzzleMArray[j].style.top = location_y + 'px';
             touchh=true;
@@ -198,7 +193,6 @@ window.onload = function() {
         puzzleMArray[j].addEventListener('touchend', function (e) {
             if(touchh==true) {
                 var order = this.getAttribute("data-order");
-                // console.log("fill=" + fill);
                 for(var k=0; k<4; k++) {
                     if(location_x > emptyLocationArray[k][0] && location_x < emptyLocationArray[k][1]) {
                         if(location_y > emptyLocationArray[k][2] && location_y < emptyLocationArray[k][3]) {
@@ -206,7 +200,6 @@ window.onload = function() {
                             if(order == emptyOrder) {
                                 emptyArray[k].append(this);
                                 fill++;
-                                // console.log("k=" + k);
                                 if(fill == 4) {
                                     $(".sucess").show();
                                 }
