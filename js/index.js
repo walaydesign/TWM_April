@@ -175,12 +175,12 @@ window.onload = function() {
     touchh=false;
 
     let puzzleMArray = [puzzleM_1, puzzleM_2, puzzleM_3, puzzleM_4];
-    let locationArray = [
-        [location_x_1, location_y_1], 
-        [location_x_2, location_y_2], 
-        [location_x_3, location_y_3], 
-        [location_x_4, location_y_4]
-    ];
+    // let locationArray = [
+    //     [location_x_1, location_y_1], 
+    //     [location_x_2, location_y_2], 
+    //     [location_x_3, location_y_3], 
+    //     [location_x_4, location_y_4]
+    // ];
     let OriginArray = [
         [puzzleM_1_oriX, puzzleM_1_oriY],
         [puzzleM_2_oriX, puzzleM_2_oriY], 
@@ -195,6 +195,7 @@ window.onload = function() {
     ];
     let emptyArray = [empty_1, empty_2, empty_3, empty_4];
 
+    const $body = document.querySelector('body');
 
 
     for(let j = 0; j < 4; j++) {
@@ -206,7 +207,7 @@ window.onload = function() {
             console.log("puzzleMArray[j]=" + puzzleMArray[j] + ",puzzleMArray[j]=" + puzzleMArray[j] + ",j=" + j);
             puzzleMArray[j].style.left = location_x + 'px';
             puzzleMArray[j].style.top = location_y + 'px';
-            document.documentElement.style.overflowY = "hidden";
+            $body.style.overflow = 'hidden';
             touchh=true;
         })
         puzzleMArray[j].addEventListener('touchend', function (e) {
@@ -218,7 +219,7 @@ window.onload = function() {
                         if(order == emptyOrder) {
                             emptyArray[k].append(this);
                             fill++;
-                            console.log("k=" + k);
+                            // console.log("k=" + k);
                             if(fill == 4) {
                                 $(".sucess").show();
                             }
@@ -237,9 +238,9 @@ window.onload = function() {
 
     // document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
 
-    document.ontouchstart = function(e){ 
-        e.preventDefault(); 
-    }
+    // document.ontouchstart = function(e){ 
+    //     e.preventDefault(); 
+    // }
 
     
     // var location_x_1, location_y_1, touchh=false;
