@@ -136,11 +136,14 @@ puzzleM_1 = document.getElementById('puzzleM-1');
 puzzleM_2 = document.getElementById('puzzleM-2');
 puzzleM_3 = document.getElementById('puzzleM-3');
 puzzleM_4 = document.getElementById('puzzleM-4');
+var top;
+puzzleM_1.addEventListener('click',function() {
+    top = $(document).scrollTop();
+})
 puzzleM_1.addEventListener('touchmove', function (ev) {
     var touchLocation = ev.targetTouches[0];
     puzzleM_1.style.left = touchLocation.pageX + 'px';
     puzzleM_1.style.top = touchLocation.pageY + 'px';
-    var top = $(document).scrollTop();
     $(document).scrollTop(top);
 })
 
