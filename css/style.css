@@ -10,6 +10,7 @@ body {
   margin: 0;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
+  height: 100vh;
 }
 
 .container {
