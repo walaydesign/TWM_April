@@ -150,6 +150,8 @@ puzzleM_1.addEventListener('touchmove', function (ev) {
 document.addEventListener("touchmove", function(event) {
     event.preventDefault() //不产生作用
 }, {passive: true});
+bodyScroll(event);
+scrControl(t);
 
 // 方法二：兼容IOS
 function bodyScroll(event){
