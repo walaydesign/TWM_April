@@ -17,6 +17,7 @@ body {
         background-repeat: no-repeat;
         // height: 100vh;
         background-color: #EAA491;
+        // background: linear-gradient(180deg, #FCF6DB 0%, #FCF6DB 50%, #EAA491 50%, #EAA491 100%);
     }
 }
 
@@ -111,6 +112,7 @@ body {
         position: absolute;
         width: 37.5%;
         padding-bottom: 37.5%;
+        // background-color: #fff;
         >img {
             position: absolute;
             width: 100%;
@@ -140,7 +142,26 @@ body {
         }
     }
     @media screen and (max-width: 991px) {
-        display: none;
+        &_item {
+            &.empty {
+                &-1 {
+                    top: 32.4%;
+                    left: 12.9%;
+                }
+                &-2 {
+                    top: 32.4%;
+                    left: 51%;
+                }
+                &-3 {
+                    top: 56.4%;
+                    left: 12.9%;
+                }
+                &-4 {
+                    top: 56.4%;
+                    left: 51%;
+                }
+            }
+        }
     }
 }
 

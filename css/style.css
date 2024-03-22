@@ -130,8 +130,21 @@ body {
 }
 
 @media screen and (max-width: 991px) {
-  .empty {
-    display: none;
+  .empty_item.empty-1 {
+    top: 32.4%;
+    left: 12.9%;
+  }
+  .empty_item.empty-2 {
+    top: 32.4%;
+    left: 51%;
+  }
+  .empty_item.empty-3 {
+    top: 56.4%;
+    left: 12.9%;
+  }
+  .empty_item.empty-4 {
+    top: 56.4%;
+    left: 51%;
   }
 }
 
