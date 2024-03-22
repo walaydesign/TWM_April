@@ -56,16 +56,16 @@ body {
             display: none;
         }
     }
-    @media screen and (max-width: 991px) {
-        &_group {
-            &.pc {
-                display: none;
-            }
-            &.m {
-                display: block;
-            }
-        }
-    }
+    // @media screen and (max-width: 991px) {
+    //     &_group {
+    //         &.pc {
+    //             display: none;
+    //         }
+    //         &.m {
+    //             display: block;
+    //         }
+    //     }
+    // }
 }
 
 .empty_item {
