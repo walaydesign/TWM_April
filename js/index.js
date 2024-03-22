@@ -147,4 +147,19 @@ puzzleM_1.addEventListener('touchmove', function (ev) {
     $(document).scrollTop(top);
 })
 
-// window.ontouchstart = function(e) { e.preventDefault(); };
+document.addEventListener("touchmove", function(event) {
+    event.preventDefault() //不产生作用
+}, {passive: true});
+
+// 方法二：兼容IOS
+function bodyScroll(event){
+    event.preventDefault();
+}
+
+function scrControl(t){
+    if(t == 0){ //禁止滚动
+        document.body.addEventListener('touchmove', this.bodyScroll, { passive: false });
+    }else if( t == 1){ //开启滚动
+        document.body.removeEventListener('touchmove',this.bodyScroll, {passive: false});
+    }
+}
