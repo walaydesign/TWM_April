@@ -10,12 +10,11 @@
     <div class="container">
         <img class="bg" src="./img/bg.png" alt="">
         <div class="puzzle">
-            <div class="puzzle_group puzzle_group-1">
-                <!-- <div class="puzzle_item puzzle-1" draggable="true"></div> -->
-                <img class="puzzle_item puzzle-1" draggable="true" src="./img/puzzle-01.png" alt="">
-                <img class="puzzle_item puzzle-2" draggable="true" src="./img/puzzle-02.png" alt="">
-                <img class="puzzle_item puzzle-3" draggable="true" src="./img/puzzle-03.png" alt="">
-                <img class="puzzle_item puzzle-4" draggable="true" src="./img/puzzle-04.png" alt="">
+            <div class="puzzle_group">
+                <img class="puzzle_item puzzle-1" id="puzzle-1" draggable="true" src="./img/puzzle-1-1.png" data-order="1" alt="">
+                <img class="puzzle_item puzzle-2" id="puzzle-2" draggable="true" src="./img/puzzle-1-2.png" data-order="2" alt="">
+                <img class="puzzle_item puzzle-3" id="puzzle-3" draggable="true" src="./img/puzzle-1-3.png" data-order="3" alt="">
+                <img class="puzzle_item puzzle-4" id="puzzle-4" draggable="true" src="./img/puzzle-1-4.png" data-order="4" alt="">
             </div>
         </div>
         <div class="empty">
@@ -24,6 +23,15 @@
             <div class="empty_item empty-3"></div>
             <div class="empty_item empty-4"></div>
         </div>
+        <div class="sucess">
+            <div class="sucess_bg"></div>
+            <img src="./img/GIF.gif" alt="">
+        </div>
+        <div class="fail">
+            <img class="fail_bg" src="./img/fail-bg.png" alt="">
+            <img class="fail_btn" src="./img/pop-up_btn.png" alt="">
+        </div>
+        
     </div>
 
     <script src="./js/jquery.min.js"></script>
