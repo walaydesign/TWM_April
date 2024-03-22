@@ -235,8 +235,11 @@ window.onload = function() {
         })
     }
 
-    document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
+    // document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
 
+    document.ontouchstart = function(e){ 
+        e.preventDefault(); 
+    }
 
     
     // var location_x_1, location_y_1, touchh=false;
